@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 import argparse
 import os
 import re
@@ -130,7 +130,7 @@ def convert(args):
             format = '.%%0%dd' % frame_number_width
             outfilename = outfile + format % (frame - 1)
 
-        print "exporting %s..." % outfilename
+        print("exporting %s..." % outfilename)
         cursvgfile = outfilename + '.svg'
         if not args.svg:
             cursvgfile = os.path.join(tempdir, os.path.basename(cursvgfile))
@@ -177,8 +177,8 @@ def convert(args):
                         resized = True
 
                     if resized:
-                        print "resized %dx%d to %dx%d" % \
-                            (svg.props.width, svg.props.height, width, height)
+                        print("resized %dx%d to %dx%d" % \
+                            (svg.props.width, svg.props.height, width, height))
 
                 scale_x = float(width) / svg.props.width
                 scale_y = float(height) / svg.props.height
@@ -225,7 +225,7 @@ if __name__ == "__main__":
         help="super scale factor, render to a larger image and then resize it down (slower)")
     parser.add_argument('-n', '--no-force-stroke', action="store_true",
         help="don't force shape strokes, default is to force them")
-    parser.add_argument('input-file', type=argparse.FileType('r'), help="input SWF file")
+    parser.add_argument('input-file', type=argparse.FileType('rb'), help="input SWF file")
     args = parser.parse_args()
 
     if args.frames:
