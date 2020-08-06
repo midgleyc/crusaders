@@ -8,8 +8,6 @@ import tempfile
 
 from copy import deepcopy
 
-import cairo
-
 from PIL import Image
 from swf.movie import SWF
 from swf.export import SVGExporter
@@ -121,7 +119,7 @@ def convert(args):
         svg_exporter = SVGExporter()
         svgdata = swf.export(svg_exporter, force_stroke=not args.no_force_stroke)
 
-        if original_frames != "all" and max_frame_number == 1:
+        if args.frames != "all" and max_frame_number == 1:
             outfilename = outfile
         elif frame_range[0] < frame_range[1] - 1:
             format = '.%%0%dd-%%0%dd' % (frame_number_width, frame_number_width)
@@ -137,81 +135,18 @@ def convert(args):
 
         open(cursvgfile, 'wb').write(svgdata.read())
 
-        if args.png:
-            svg = rsvg.Handle(cursvgfile)
-
-            if width is None:
-                if args.width:
-                    width = args.width
-                    height = int(round(float(svg.props.height) * width / svg.props.width))
-
-                if args.height:
-                    height = args.height
-                    if not width:
-                        width = int(round(float(svg.props.width) * height / svg.props.height))
-
-                if args.scale and not width:
-                    width = int(round(svg.props.width * args.scale))
-                    height = int(round(float(svg.props.height) * width / svg.props.width))
-
-                if not args.width and not args.height and not args.scale:
-                    width = abs(svg.props.width)
-                    height = abs(svg.props.height)
-                    resized = False
-                    if width > 4096:
-                        width = 4096
-                        height = int(round(float(svg.props.height) * width / svg.props.width))
-                        resized = True
-                    elif width < 10:
-                        width = 10
-                        height = int(round(float(svg.props.height) * width / svg.props.width))
-                        resized = True
-
-                    if height > 4096:
-                        height = 4096
-                        width = int(round(float(svg.props.width) * height / svg.props.height))
-                        resized = True
-                    elif height < 10:
-                        height = 10
-                        width = int(round(float(svg.props.width) * height / svg.props.height))
-                        resized = True
-
-                    if resized:
-                        print("resized %dx%d to %dx%d" % \
-                            (svg.props.width, svg.props.height, width, height))
-
-                scale_x = float(width) / svg.props.width
-                scale_y = float(height) / svg.props.height
-
-            sscale = args.super_scale or 1
-            img = cairo.ImageSurface(cairo.FORMAT_ARGB32,
-                int(round(sscale * width)), int(round(sscale * height)))
-            ctx = cairo.Context(img)
-            ctx.scale(sscale * scale_x, sscale * scale_y)
-
-            svg.render_cairo(ctx)
-
-            pngfilename = outfilename + '.png'
-            img.write_to_png(pngfilename)
-            if sscale != 1:
-                img = Image.open(pngfilename)
-                img = img.resize((width, height), Image.ANTIALIAS)
-                img.save(pngfilename)
-
         if not args.frames:
             break
 
     if tempdir:
         shutil.rmtree(tempdir)
 
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="convert SWF to SVG and PNG")
     parser.add_argument('-o', '--output-file',
         help="output filename, .png or .svg and if needed a frame number is added automatically, "
              "default: input file name, current directory")
-    parser.add_argument('--svg', action="store_true", default=False, help="export SVG file")
-    parser.add_argument('--png', action="store_true", default=False, help="export PNG file")
+    parser.add_argument('--svg', action="store_true", default=True, help="export SVG file")
     parser.add_argument('-w', '--width', type=int,
         help="width of the PNG, no effect for the SVG export, has precedence over --scale")
     parser.add_argument('-t', '--height', type=int,
@@ -255,8 +190,5 @@ if __name__ == "__main__":
             raise Exception("couldn't understand frame number or range: '%s'" % chunk)
 
         args.frames = list(sorted(set(args.frames)))
-
-    if not args.svg and not args.png:
-        raise Exception("need --png or --svg argument")
 
     convert(args)
