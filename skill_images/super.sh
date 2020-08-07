@@ -6,7 +6,7 @@ fi
 for i in "$@"; do
 ./master.sh $i
 
-skillFolder="$OUTPUT_BASE_DIR/$i"
+skillFolder="$OUTPUT_BASE_DIR_SKILLS/$i"
 mkdir "$skillFolder"
-mv $OUTPUT_BASE_DIR/*.png "$skillFolder"
+mv $OUTPUT_BASE_DIR_SKILLS/*.png "$skillFolder"
 done
