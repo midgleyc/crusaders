@@ -48,6 +48,7 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
   if effect_name == "unlock_formation_ability":
     f_a = lookup_formation_ability_by_id(j, int(params['id']))
     base = effect_string_to_effect(j, f_a['effect'][0]['effect_string'], extra_fields)
+    # or formation_ability_desc
     extra = ''
     extra_reqs = f_a['requirements']
     if extra_reqs:
@@ -56,8 +57,19 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
         if requirement == "hero_in_formation":
           hero = lookup_hero_by_id(j, req['target_hero_id'])['name']
           extra = f' when {hero} is also in the formation'
+        if requirement == "num_in_formation":
+          amount = req.get('amount', None)
+          if amount == 0:
+            extra += ' when there are no '
+          else:
+            raise AttributeError('Cannot parse num_in_formation' + f_a)
+          satisfies_tag_exp = req.get("satisfies_tag_exp", None)
+          if not satisfies_tag_exp:
+            raise AttributeError('Cannot parse num_in_formation' + f_a)
+          if satisfies_tag_exp.startswith('!'):
+            extra += f'non-{satisfies_tag_exp[1:].title()} Crusaders in the formation'
         else:
-          raise AttributeError('Unrecognised requirement: ' + requirement)
+          raise AttributeError('Unrecognised requirement: ' + requirement, f_a)
     return base + extra
   s = effect['descriptions']['desc']
   for x in params:
