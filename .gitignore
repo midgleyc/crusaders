@@ -2,3 +2,4 @@
 .env
 url.txt
 working
+__pycache__

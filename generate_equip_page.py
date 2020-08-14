@@ -13,6 +13,10 @@ class Template:
     s.append('}}')
     return '\n'.join(s)
 
+def lookup_upgrade_by_id(j, a_id):
+  upgrades = [x for x in j['upgrade_defines'] if x['id'] == a_id]
+  return upgrades[0]
+
 def lookup_ability_by_id(j, a_id):
   abilities = [x for x in j['ability_defines'] if x['id'] == a_id]
   return abilities[0]
@@ -48,7 +52,7 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
   if effect_name == "unlock_formation_ability":
     f_a = lookup_formation_ability_by_id(j, int(params['id']))
     base = effect_string_to_effect(j, f_a['effect'][0]['effect_string'], extra_fields)
-    # or formation_ability_desc
+    # TODO: formation_ability_desc is the right one
     extra = ''
     extra_reqs = f_a['requirements']
     if extra_reqs:
@@ -57,7 +61,7 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
         if requirement == "hero_in_formation":
           hero = lookup_hero_by_id(j, req['target_hero_id'])['name']
           extra = f' when {hero} is also in the formation'
-        if requirement == "num_in_formation":
+        elif requirement == "num_in_formation":
           amount = req.get('amount', None)
           if amount == 0:
             extra += ' when there are no '
@@ -68,9 +72,13 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
             raise AttributeError('Cannot parse num_in_formation' + f_a)
           if satisfies_tag_exp.startswith('!'):
             extra += f'non-{satisfies_tag_exp[1:].title()} Crusaders in the formation'
+        elif requirement == 'fa_stacks':
+          fa_stack_id = req['fa_id']
+          fa_stack_name = lookup_formation_ability_by_id(j, fa_stack_id)['name']
+          extra += f' when {fa_stack_name} has {req["amount"]} stacks'
         else:
           raise AttributeError('Unrecognised requirement: ' + requirement, f_a)
-    return base + extra
+    return str(base) + extra
   s = effect['descriptions']['desc']
   for x in params:
     s = s.replace('$' + x, str(params[x]))
@@ -84,6 +92,11 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
   if effect['owner'] == 'ability':
     a = lookup_ability_by_id(j, int(params['id']))
     s = s.replace('$(ability_name id)', a['name'])
+  if effect['owner'] == 'upgrade':
+    u = lookup_upgrade_by_id(j, int(params['id']))
+    hero = lookup_hero_by_id(j, u['hero_id'])['name']
+    s = s.replace('$(upgrade_hero id)', hero)
+    s = s.replace('$(upgrade_name id)', u['name'])
   if '$' in s:
     return (s, ','.join([str((x, params[x])) for x in params]))
   else:
@@ -116,7 +129,7 @@ def print_loot(fulljs, loot):
   print('\n')
   template = Template()
   template.fields['name'] = name
-  image_name = name.title().replace(' ', '') + ('GL1' if rarity == 'Golden Legendary' else 'L1' if rarity == 'Legendary' else 'GE' if rarity == 'Golden Epic' else '')
+  image_name = name.replace("'", '').replace('-', '').title().replace(' ', '') + ('GL1' if rarity == 'Golden Legendary' else 'L1' if rarity == 'Legendary' else 'GE' if rarity == 'Golden Epic' else '')
   template.fields['image'] = f'{image_name}.png'
   template.fields['category'] = 'Gear'
   template.fields['rarity'] = rarity
