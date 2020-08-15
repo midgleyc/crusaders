@@ -51,8 +51,10 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
       params[param_name] = p_v
   if effect_name == "unlock_formation_ability":
     f_a = lookup_formation_ability_by_id(j, int(params['id']))
+    desc = f_a['effect'][0].get('formation_ability_desc', None)
+    if desc is not None:
+      return desc.replace('AMOUNT', extra_fields['level_amount'])
     base = effect_string_to_effect(j, f_a['effect'][0]['effect_string'], extra_fields)
-    # TODO: formation_ability_desc is the right one
     extra = ''
     extra_reqs = f_a['requirements']
     if extra_reqs:
@@ -66,10 +68,10 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
           if amount == 0:
             extra += ' when there are no '
           else:
-            raise AttributeError('Cannot parse num_in_formation' + f_a)
+            raise AttributeError('Cannot parse num_in_formation', f_a)
           satisfies_tag_exp = req.get("satisfies_tag_exp", None)
           if not satisfies_tag_exp:
-            raise AttributeError('Cannot parse num_in_formation' + f_a)
+            raise AttributeError('Cannot parse num_in_formation', f_a)
           if satisfies_tag_exp.startswith('!'):
             extra += f'non-{satisfies_tag_exp[1:].title()} Crusaders in the formation'
         elif requirement == 'fa_stacks':
@@ -126,11 +128,13 @@ def print_loot(fulljs, loot):
   url = url_template.format(url_name)
   print('-'*10)
   print(url)
+  image_name = name.replace("'", '').replace('-', '').title().replace(' ', '') + ('GL1' if rarity == 'Golden Legendary' else 'L1' if rarity == 'Legendary' else 'GE' if rarity == 'Golden Epic' else '') + '.png'
+  image_template = 'https://crusaders-of-the-lost-idols.fandom.com/wiki/Special:Upload?wpDestFile={}'
+  print(image_template.format(image_name))
   print('\n')
   template = Template()
   template.fields['name'] = name
-  image_name = name.replace("'", '').replace('-', '').title().replace(' ', '') + ('GL1' if rarity == 'Golden Legendary' else 'L1' if rarity == 'Legendary' else 'GE' if rarity == 'Golden Epic' else '')
-  template.fields['image'] = f'{image_name}.png'
+  template.fields['image'] = image_name
   template.fields['category'] = 'Gear'
   template.fields['rarity'] = rarity
   if loot['description']:
@@ -138,6 +142,7 @@ def print_loot(fulljs, loot):
   effects = loot['effects']
   hero = lookup_hero_by_id(fulljs, loot['hero_id']).get('name', '')
   extra_effect_fields = {'target': hero}
+  # TODO: effect can have flash_desc field, which overrides effect_string
   template.fields['effect'] = effect_string_to_effect(fulljs, effects[0]['effect_string'], extra_effect_fields)
   if rarity.endswith('Legendary'):
     leg_effect = effects[1]

@@ -34,7 +34,7 @@ class Items:
     s.append('{{ItemT|top}}')
     for slot in self.slots.values():
       s.append(f'{{{{ItemT|class={slot.item_class}|row={len(slot.items)}|C|[[{slot.items[0].name}]]|{slot.items[0].effect_params()}}}}}')
-      for item in slot.items[1:]:
+      for item in sorted(slot.items[1:], key=lambda x: [x.rarity == 'GL', x.rarity == 'L']):
         s.append(f'{{{{ItemT|{item.rarity}|[[{item.make_link()}]]|{item.effect_params()}}}}}')
       s.append('')
     s.append('{{ItemT|end}}')
