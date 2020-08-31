@@ -31,6 +31,8 @@ def lookup_effect_by_key(j, effect_key):
 
 def effect_string_to_effect(j, effect_string, extra_fields={}):
   effect_name, *param_values = effect_string.split(',')
+  if effect_name == 'global_dps_per_target':
+    return f'Increases the DPS of all Crusaders by {extra_fields["level_amount"]}% for each Alien Crusader, stacking additively'
   effect = lookup_effect_by_key(j, effect_name)
   params = extra_fields
   param_names = effect["param_names"]
@@ -44,6 +46,8 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
         p_v = int(p_v)
       elif p_t == 'str':
         p_v = str(p_v)
+      elif p_t == '[int]':
+        p_v = param_values[i:]
       else:
         raise AttributeError("Cannot parse parameter type " + param_name)
       params[p_n] = p_v
@@ -95,10 +99,22 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
     a = lookup_ability_by_id(j, int(params['id']))
     s = s.replace('$(ability_name id)', a['name'])
   if effect['owner'] == 'upgrade':
-    u = lookup_upgrade_by_id(j, int(params['id']))
-    hero = lookup_hero_by_id(j, u['hero_id'])['name']
-    s = s.replace('$(upgrade_hero id)', hero)
-    s = s.replace('$(upgrade_name id)', u['name'])
+    param_id = params.get('id', None)
+    if param_id is not None:
+      u = lookup_upgrade_by_id(j, int(params['id']))
+      hero = lookup_hero_by_id(j, u['hero_id'])['name']
+      s = s.replace('$(upgrade_hero id)', hero)
+      s = s.replace('$(upgrade_name id)', u['name'])
+    else:
+      param_id = params.get('ids', None)
+      if param_id is not None:
+        us = []
+        for u_id in param_id:
+          u = lookup_upgrade_by_id(j, int(u_id))
+          hero = lookup_hero_by_id(j, u['hero_id'])['name']
+          us.append(u['name'])
+        s = s.replace('$(upgrade_hero ids)', hero)
+        s = s.replace('$(upgrade_names ids)', ' and '.join(us))
   if '$' in s:
     return (s, ','.join([str((x, params[x])) for x in params]))
   else:
@@ -142,8 +158,11 @@ def print_loot(fulljs, loot):
   effects = loot['effects']
   hero = lookup_hero_by_id(fulljs, loot['hero_id']).get('name', '')
   extra_effect_fields = {'target': hero}
-  # TODO: effect can have flash_desc field, which overrides effect_string
-  template.fields['effect'] = effect_string_to_effect(fulljs, effects[0]['effect_string'], extra_effect_fields)
+  flash_desc = effects[0].get('flash_desc', None)
+  if flash_desc is not None:
+    template.fields['effect'] = flash_desc
+  else:
+    template.fields['effect'] = effect_string_to_effect(fulljs, effects[0]['effect_string'], extra_effect_fields)
   if rarity.endswith('Legendary'):
     leg_effect = effects[1]
     extra_effect_fields['level_amount'] = leg_effect['base_amount']
