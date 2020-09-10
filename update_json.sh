@@ -1,0 +1,1 @@
+wget 'https://idleps18.djartsgames.ca/~idle/post.php?current_version=1&dl=0.22&call=getDefinitions' --ignore-length -O ~/crusaders/fulljs.json && cat fulljs.json | jq '.' > f.json && mv f.json fulljs.json
