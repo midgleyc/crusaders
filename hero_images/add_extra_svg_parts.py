@@ -3,17 +3,20 @@
 import sys
 import re
 
+x=-30
+y=-32
+
 def correct_viewbox(s):
   for index, line in enumerate(s):
     if line.startswith('<svg'):
-      s[index] = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" viewBox="-33.5 -43.5 64 64">\n'
+      s[index] = f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="256" viewBox="{x - 1.5} {y - 1.5} 64 64">\n'
       break
 
 def add_clippath(s):
   for index, line in enumerate(s):
     match = re.match('^(\s*)<defs>', line)
     if match:
-      s[index] = line.rstrip() + '<clipPath id="clip"><rect x="-32" y="-42" width="61" height="61" /></clipPath>\n'
+      s[index] = line.rstrip() + f'<clipPath id="clip"><rect x="{x}" y="{y}" width="61" height="61" /></clipPath>\n'
       break
   for index, line in reversed(list(enumerate(s))):
     match = re.match('^(\s*)<use([^>]+)xlink:href="([^"]+)"', line)
@@ -26,9 +29,9 @@ def add_border(s):
     match = re.match('^(\s*)<use xlink:href="([^"]+)"', line)
     if match:
       indent = match.group(1)
-      s.insert(index, indent + '<rect x="-32" y="-42" width="61" height="61" stroke="none" fill="#73270B" />\n')
-      s.insert(index + 2, indent + '<rect x="-32" y="-42" width="61" height="61" stroke="#9A340E" stroke-width="1" fill="none" />\n')
-      s.insert(index + 2, indent + '<rect x="-32" y="-42" width="61" height="61" stroke="#331104" stroke-width="3" fill="none" />\n')
+      s.insert(index, indent + f'<rect x="{x}" y="{y}" width="61" height="61" stroke="none" fill="#73270B" />\n')
+      s.insert(index + 2, indent + f'<rect x="{x}" y="{y}" width="61" height="61" stroke="#9A340E" stroke-width="1" fill="none" />\n')
+      s.insert(index + 2, indent + f'<rect x="{x}" y="{y}" width="61" height="61" stroke="#331104" stroke-width="3" fill="none" />\n')
       break
 
 def adjust_lines(s):
