@@ -6,6 +6,8 @@ import json
 import sys
 
 class Item:
+  def __init__(self):
+    self.extra_bar = ''
   def is_leg(self):
     return self.rarity.endswith('L')
   def make_link(self):
@@ -16,7 +18,7 @@ class Item:
     return self.name
   def effect_params(self):
     if self.is_leg():
-      return self.effect + '||' + self.leg_effect
+      return self.effect + f'||{self.extra_bar}' + self.leg_effect
     return self.effect
 
 class Slot:
@@ -49,6 +51,8 @@ def _rarity_to_acronym(num, golden):
     return f'G{base}'
   return base
 
+all_rarities = ['C', 'U', 'R', 'E', 'GE', 'L', 'GL']
+
 def make_subpage(fulljs, loot):
   all_items = Items()
   for i in [1, 2, 3]:
@@ -64,6 +68,13 @@ def make_subpage(fulljs, loot):
       elif effect[0] == 'buff_formation_ability':
         f_a = lookup_formation_ability_by_id(fulljs, int(effect[-1]))['name']
         item_to_add.effect = f'effect|{f_a}'
+      elif effect[0] == 'buff_fa_max_stacks':
+        f_a = lookup_formation_ability_by_id(fulljs, int(effect[-1]))['name']
+        item_to_add.effect = f'Increases the max stacks of {f_a} by {effect[-2]}'
+        item_to_add.extra_bar = '|'
+      elif effect[0] == 'gold_multiplier_mult':
+        item_to_add.effect = 'gold'
+        item_to_add.extra_bar = '|'
       else:
         raise AttributeError("Cannot parse effect " + ','.join(effect))
       if item_to_add.is_leg():

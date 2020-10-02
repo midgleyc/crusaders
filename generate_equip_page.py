@@ -33,7 +33,10 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
   effect_name, *param_values = effect_string.split(',')
   if effect_name == 'global_dps_per_target':
     return f'Increases the DPS of all Crusaders by {extra_fields["level_amount"]}% for each Alien Crusader, stacking additively'
-  effect = lookup_effect_by_key(j, effect_name)
+  if effect_name == 'buff_fa_max_stacks':
+    return f'Increases the max stacks of Ring Leader by {param_values[-2]}'
+  else:
+    effect = lookup_effect_by_key(j, effect_name)
   params = extra_fields
   param_names = effect["param_names"]
   if not param_names:
@@ -166,7 +169,10 @@ def print_loot(fulljs, loot):
   if rarity.endswith('Legendary'):
     leg_effect = effects[1]
     extra_effect_fields['level_amount'] = leg_effect['base_amount']
-    template.fields['legendary'] = effect_string_to_effect(fulljs, leg_effect['effect_string'], extra_effect_fields)
+    try:
+      template.fields['legendary'] = effect_string_to_effect(fulljs, leg_effect['effect_string'], extra_effect_fields)
+    except:
+      template.fields['legendary'] = ''
     template.fields['legendarybase'] = leg_effect['base_amount']
     if leg_effect.get('growth', None):
       b = int(leg_effect['base_amount'])
