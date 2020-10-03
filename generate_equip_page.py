@@ -94,10 +94,14 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
   for x in params:
     s = s.replace('$(' + x + ')', str(params[x]))
   if effect['owner'] == 'formation_ability':
-    f_a = lookup_formation_ability_by_id(j, int(params['id']))
-    hero = lookup_hero_by_id(j, f_a['hero_id'])['name']
-    s = s.replace('$(formation_ability_owner_name id)', hero)
-    s = s.replace('$(formation_ability_name id)', f_a['name'])
+    if 'id' in params:
+      f_a = lookup_formation_ability_by_id(j, int(params['id']))
+      hero = lookup_hero_by_id(j, f_a['hero_id'])['name']
+      s = s.replace('$(formation_ability_owner_name id)', hero)
+      s = s.replace('$(formation_ability_name id)', f_a['name'])
+    elif 'ids' in params:
+      f_as = [lookup_formation_ability_by_id(j, int(x)) for x in params['ids']]
+      s = s.replace('$(formation_ability_names ids)', ' and '.join([f_a['name'] for f_a in f_as]))
   if effect['owner'] == 'ability':
     a = lookup_ability_by_id(j, int(params['id']))
     s = s.replace('$(ability_name id)', a['name'])
