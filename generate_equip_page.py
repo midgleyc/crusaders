@@ -96,7 +96,7 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
   if effect['owner'] == 'formation_ability':
     if 'id' in params:
       f_a = lookup_formation_ability_by_id(j, int(params['id']))
-      hero = lookup_hero_by_id(j, f_a['hero_id'])['name']
+      hero = lookup_hero_by_id(j, f_a['hero_id'])['short_name']
       s = s.replace('$(formation_ability_owner_name id)', hero)
       s = s.replace('$(formation_ability_name id)', f_a['name'])
     elif 'ids' in params:
@@ -109,7 +109,7 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
     param_id = params.get('id', None)
     if param_id is not None:
       u = lookup_upgrade_by_id(j, int(params['id']))
-      hero = lookup_hero_by_id(j, u['hero_id'])['name']
+      hero = lookup_hero_by_id(j, u['hero_id'])['short_name']
       s = s.replace('$(upgrade_hero id)', hero)
       s = s.replace('$(upgrade_name id)', u['name'])
     else:
@@ -118,7 +118,7 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
         us = []
         for u_id in param_id:
           u = lookup_upgrade_by_id(j, int(u_id))
-          hero = lookup_hero_by_id(j, u['hero_id'])['name']
+          hero = lookup_hero_by_id(j, u['hero_id'])['short_name']
           us.append(u['name'])
         s = s.replace('$(upgrade_hero ids)', hero)
         s = s.replace('$(upgrade_names ids)', ' and '.join(us))
