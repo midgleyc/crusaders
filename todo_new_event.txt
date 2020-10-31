@@ -1,0 +1,19 @@
+* New Crusader
+** Module data
+** Cim/valid
+** Page
+*** Intro text from blog
+** Crusaders/Mission Tags
+** Template:Crusaders
+** Crusaders
+
+* Crusader skin
+** Module data
+** Cim/valid
+** Update page
+
+* Event
+** Intro dates, text from blog, text from news
+** Crusader intro
+** Missions
+** Achievements

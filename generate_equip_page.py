@@ -94,7 +94,8 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
   for x in params:
     s = s.replace('$(' + x + ')', str(params[x]))
   if effect['owner'] == 'global':
-    s = s.replace('$(describe_tags tag)', params['tag'].title())
+    if 'tag' in params:
+      s = s.replace('$(describe_tags tag)', params['tag'].title())
   if effect['owner'] == 'formation_ability':
     if 'id' in params:
       f_a = lookup_formation_ability_by_id(j, int(params['id']))
