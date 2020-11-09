@@ -35,6 +35,8 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
     return f'Increases the DPS of all Crusaders by {extra_fields["level_amount"]}% for each Alien Crusader, stacking additively'
   if effect_name == 'buff_fa_max_stacks':
     return f'Increases the max stacks of Ring Leader by {param_values[-2]}'
+  if effect_name == 'buff_formation_ability_indices':
+    return f'Increases the DPS effect of Crawly Friends by {param_values[0]}%'
   else:
     effect = lookup_effect_by_key(j, effect_name)
   params = extra_fields
@@ -157,7 +159,7 @@ def print_loot(fulljs, loot):
   url = url_template.format(url_name)
   print('-'*10)
   print(url)
-  image_name = name.replace("'", '').replace('-', '').title().replace(' ', '') + ('GL1' if rarity == 'Golden Legendary' else 'L1' if rarity == 'Legendary' else 'GE' if rarity == 'Golden Epic' else '') + '.png'
+  image_name = name.replace("'", '').replace('-', '').replace(',', '').title().replace(' ', '') + ('GL1' if rarity == 'Golden Legendary' else 'L1' if rarity == 'Legendary' else 'GE' if rarity == 'Golden Epic' else '') + '.png'
   image_template = 'https://crusaders-of-the-lost-idols.fandom.com/wiki/Special:Upload?wpDestFile={}'
   print(image_template.format(image_name))
   print('\n')

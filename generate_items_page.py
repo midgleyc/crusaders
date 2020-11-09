@@ -65,6 +65,9 @@ def make_subpage(fulljs, loot):
       if effect[0] == 'buff_upgrade':
         upgrade = lookup_upgrade_by_id(fulljs, int(effect[-1]))['name']
         item_to_add.effect = f'effect|{upgrade}'
+      elif effect[0] == 'buff_upgrades':
+        upgrades = [lookup_upgrade_by_id(fulljs, int(upgrade))['name'] for upgrade in effect[2:]]
+        item_to_add.effect = f'effect|{" and ".join(upgrades)}'
       elif effect[0] == 'buff_formation_ability':
         f_a = lookup_formation_ability_by_id(fulljs, int(effect[-1]))['name']
         item_to_add.effect = f'effect|{f_a}'
@@ -74,6 +77,16 @@ def make_subpage(fulljs, loot):
         item_to_add.extra_bar = '|'
       elif effect[0] == 'gold_multiplier_mult':
         item_to_add.effect = 'gold'
+        item_to_add.extra_bar = '|'
+      elif effect[0] == 'buff_formation_ability_indices':
+        f_a = lookup_formation_ability_by_id(fulljs, int(effect[2]))['name']
+        item_to_add.effect = f'Increases the DPS effect of {f_a} by {effect[1]}%'
+        item_to_add.extra_bar = '|'
+      elif effect[0] == 'increase_monster_spawn_time_mult':
+        item_to_add.effect = f'Increases monster spawn speed by {effect[1]}%'
+        item_to_add.extra_bar = '|'
+      elif effect[0] == 'global_dps_multiplier_mult':
+        item_to_add.effect = f'DPSall'
         item_to_add.extra_bar = '|'
       else:
         raise AttributeError("Cannot parse effect " + ','.join(effect))
