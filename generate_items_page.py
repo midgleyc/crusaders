@@ -88,6 +88,9 @@ def make_subpage(fulljs, loot):
       elif effect[0] == 'global_dps_multiplier_mult':
         item_to_add.effect = f'DPSall'
         item_to_add.extra_bar = '|'
+      elif effect[0] == 'hero_dps_multiplier_mult':
+        hero = lookup_hero_by_id(fulljs, item['hero_id'])
+        item_to_add.effect = f'DPS|{hero["name"]}'
       else:
         raise AttributeError("Cannot parse effect " + ','.join(effect))
       if item_to_add.is_leg():

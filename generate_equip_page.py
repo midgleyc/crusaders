@@ -183,7 +183,7 @@ def print_loot(fulljs, loot):
     extra_effect_fields['level_amount'] = leg_effect['base_amount']
     try:
       template.fields['legendary'] = effect_string_to_effect(fulljs, leg_effect['effect_string'], extra_effect_fields)
-    except:
+    except Exception as e:
       template.fields['legendary'] = ''
     template.fields['legendarybase'] = leg_effect['base_amount']
     if leg_effect.get('growth', None):
