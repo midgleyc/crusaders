@@ -159,7 +159,7 @@ def print_loot(fulljs, loot):
   url = url_template.format(url_name)
   print('-'*10)
   print(url)
-  image_name = name.replace("'", '').replace('-', '').replace(',', '').title().replace(' ', '') + ('GL1' if rarity == 'Golden Legendary' else 'L1' if rarity == 'Legendary' else 'GE' if rarity == 'Golden Epic' else '') + '.png'
+  image_name = name.replace("'", '').replace('-', ' ').replace(',', '').title().replace(' ', '') + ('GL1' if rarity == 'Golden Legendary' else 'L1' if rarity == 'Legendary' else 'GE' if rarity == 'Golden Epic' else '') + '.png'
   image_template = 'https://crusaders-of-the-lost-idols.fandom.com/wiki/Special:Upload?wpDestFile={}'
   print(image_template.format(image_name))
   print('\n')
