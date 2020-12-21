@@ -1,0 +1,2 @@
+set viewbox to "-32 -32 64 64" // maybe not?
+add ' clip-path="url(#clip)"/>' to the end of the use xlink:href

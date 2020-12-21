@@ -7,6 +7,7 @@
 ** Crusaders/Mission Tags
 ** Template:Crusaders
 ** Crusaders
+** Other crusaders in the same seat
 
 * Crusader skin
 ** Module data
