@@ -71,6 +71,11 @@ def make_subpage(fulljs, loot):
       elif effect[0] == 'buff_formation_ability':
         f_a = lookup_formation_ability_by_id(fulljs, int(effect[-1]))['name']
         item_to_add.effect = f'effect|{f_a}'
+      elif effect[0] == 'buff_formation_abilities':
+        f_as = []
+        for effect_id in effect[2:]:
+          f_as.append(lookup_formation_ability_by_id(fulljs, int(effect_id))['name'])
+        item_to_add.effect = f'effect|{" and ".join(f_as)}'
       elif effect[0] == 'buff_fa_max_stacks':
         f_a = lookup_formation_ability_by_id(fulljs, int(effect[-1]))['name']
         item_to_add.effect = f'Increases the max stacks of {f_a} by {effect[-2]}'

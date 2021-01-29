@@ -19,4 +19,4 @@
 ** Crusader intro
 ** Campaigns
 ** Achievements
-** Events page
+* Events page
