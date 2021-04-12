@@ -37,6 +37,8 @@ def effect_string_to_effect(j, effect_string, extra_fields={}):
     return f'Increases the max stacks of Ring Leader by {param_values[-2]}'
   if effect_name == 'buff_formation_ability_indices':
     return f'Increases the DPS effect of Crawly Friends by {param_values[0]}%'
+  if effect_name == 'reduce_fa_cooldown':
+    return f'Decreases the cooldown of Nuts! by {param_values[0]} seconds'
   else:
     effect = lookup_effect_by_key(j, effect_name)
   params = extra_fields
