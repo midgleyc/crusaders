@@ -1,0 +1,409 @@
+{
+  "id": "1",
+  "name": "The Crypt",
+  "description": "This is a big description of something to do with The Crypt. When you read it, you will be blown away by its descriptiveness. Such a rush of knowledge!",
+  "start_date": 1593104400,
+  "end_date": 1600362000,
+  "details": {
+    "graphics": {
+      "top_left": 11452,
+      "bottom_right": 11451,
+      "icon": 1804
+    },
+    "play_requirements": [
+      {
+        "condition": "objective_complete",
+        "objective": 595
+      }
+    ],
+    "rotating_bonuses": [
+      {
+        "type": "bonus_coins",
+        "amount": 10
+      },
+      {
+        "type": "bonus_progress",
+        "amount": 10
+      },
+      {
+        "type": "percent_idols",
+        "amount": {
+          "type": "piecewise",
+          "step": 500,
+          "pieces": [
+            {
+              "from": 500,
+              "to": 5000,
+              "from_amount": 0.01,
+              "to_amount": 0.1
+            },
+            {
+              "from": 5000,
+              "to": 5500,
+              "from_amount": 0.1,
+              "to_amount": 0.15
+            },
+            {
+              "from": 5500,
+              "to": 10000,
+              "from_amount": 0.15,
+              "to_amount": 1.5
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "levels": {
+    "1": {
+      "points_required": "500",
+      "base_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 275
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 276
+        }
+      ]
+    },
+    "2": {
+      "points_required": "1500",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "inventory_buff",
+          "buff_id": 28,
+          "amount": 5
+        }
+      ]
+    },
+    "3": {
+      "points_required": "3000",
+      "base_rewards": [
+        {
+          "reward": "inventory_buff",
+          "buff_id": 19,
+          "amount": 5
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "inventory_buff",
+          "buff_id": 20,
+          "amount": 5
+        }
+      ]
+    },
+    "4": {
+      "points_required": "5000",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 341,
+          "count": 1
+        }
+      ]
+    },
+    "5": {
+      "points_required": "7500",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 2,
+          "count": 3
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 2,
+          "count": 2
+        }
+      ]
+    },
+    "6": {
+      "points_required": "10500",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "inventory_buff",
+          "buff_id": 28,
+          "amount": 5
+        }
+      ]
+    },
+    "7": {
+      "points_required": "14000",
+      "base_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 1000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 500
+        }
+      ]
+    },
+    "8": {
+      "points_required": "18000",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 15
+        }
+      ]
+    },
+    "9": {
+      "points_required": "22500",
+      "base_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 25
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 10
+        }
+      ]
+    },
+    "10": {
+      "points_required": "27500",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 2500
+        }
+      ]
+    },
+    "11": {
+      "points_required": "33500",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 4,
+          "amount": 50
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 4,
+          "amount": 25
+        }
+      ]
+    },
+    "12": {
+      "points_required": "40500",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "inventory_buff",
+          "buff_id": 20,
+          "amount": 5
+        }
+      ]
+    },
+    "13": {
+      "points_required": "48500",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 341,
+          "count": 3
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 341,
+          "count": 1
+        }
+      ]
+    },
+    "14": {
+      "points_required": "57500",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 2,
+          "count": 2
+        }
+      ]
+    },
+    "15": {
+      "points_required": "67500",
+      "base_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 277
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 278
+        }
+      ]
+    },
+    "16": {
+      "points_required": "78500",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 10
+        }
+      ]
+    },
+    "17": {
+      "points_required": "90500",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 5,
+          "amount": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 5,
+          "amount": 5
+        }
+      ]
+    },
+    "18": {
+      "points_required": "103500",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 15
+        }
+      ]
+    },
+    "19": {
+      "points_required": "117500",
+      "base_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 100
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 50
+        }
+      ]
+    },
+    "20": {
+      "points_required": "132500",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 281
+        }
+      ]
+    },
+    "21": {
+      "points_required": "149000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 10000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 5000
+        }
+      ]
+    },
+    "22": {
+      "points_required": "166000",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 341,
+          "count": 5
+        }
+      ]
+    },
+    "23": {
+      "points_required": "184000",
+      "base_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 279
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 280
+        }
+      ]
+    },
+    "24": {
+      "points_required": "203000",
+      "base_rewards": [],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 2000
+        }
+      ]
+    },
+    "25": {
+      "points_required": "223000",
+      "base_rewards": [
+        {
+          "reward": "taskmaster",
+          "taskmaster_id": 15
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 282
+        }
+      ]
+    },
+    "0": {
+      "points_required": "0",
+      "base_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "buff",
+          "buff_id": 292
+        }
+      ]
+    }
+  }
+}
