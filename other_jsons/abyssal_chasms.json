@@ -1,0 +1,772 @@
+{
+  "id": "4",
+  "name": "Abyssal Chasms",
+  "description": "Your description here!",
+  "start_date": 1622664000,
+  "end_date": 1629921600,
+  "details": {
+    "graphics": {
+      "top_left": 12322,
+      "icon": 12364,
+      "bottom_right": 12321
+    },
+    "play_requirements": [
+      {
+        "objective": 595,
+        "condition": "objective_complete"
+      }
+    ],
+    "rotating_bonuses": [
+      {
+        "type": "bonus_coins",
+        "amount": 300
+      },
+      {
+        "type": "bonus_progress",
+        "amount": 300
+      },
+      {
+        "type": "percent_idols",
+        "amount": {
+          "type": "piecewise",
+          "step": 500,
+          "pieces": [
+            {
+              "to": 5500,
+              "to_amount": 0.15,
+              "from_amount": 0.05,
+              "from": 500
+            },
+            {
+              "to": 15000,
+              "to_amount": 3,
+              "from_amount": 0.15,
+              "from": 5500
+            },
+            {
+              "to": 17500,
+              "to_amount": 3.75,
+              "from_amount": 3,
+              "from": 15000
+            }
+          ],
+          "difficulty_mult": [
+            {
+              "1": [
+                {
+                  "pieces": [
+                    {
+                      "to": 17500,
+                      "to_amount": 1,
+                      "from_amount": 1,
+                      "from": 500
+                    }
+                  ]
+                }
+              ],
+              "2": [
+                {
+                  "pieces": [
+                    {
+                      "to": 17500,
+                      "to_amount": 1.75,
+                      "from_amount": 0.05,
+                      "from": 500
+                    }
+                  ],
+                  "max": 4
+                }
+              ],
+              "3": [
+                {
+                  "pieces": [
+                    {
+                      "to": 17500,
+                      "to_amount": 2.33333,
+                      "from_amount": 0.06667,
+                      "from": 500
+                    }
+                  ],
+                  "max": 4.5
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "featured_item_level": 18
+  },
+  "levels": [
+    {
+      "bonus_rewards": [
+        {
+          "graphic_id": 11511,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "dungeon_progress_mult,25"
+          }
+        }
+      ],
+      "points_required": "0",
+      "base_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,5"
+          }
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,5"
+          }
+        }
+      ],
+      "points_required": "500",
+      "base_rewards": [
+        {
+          "reward": "epic_recipe_tokens",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ],
+      "points_required": "1500",
+      "base_rewards": [
+        {
+          "graphic_id": 2375,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "increase_monster_spawn_time_mult,400"
+          }
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "chest_type_id": 365,
+          "reward": "chest",
+          "count": 10
+        }
+      ],
+      "points_required": "3000",
+      "base_rewards": [
+        {
+          "chest_type_id": 365,
+          "reward": "chest",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 400
+        }
+      ],
+      "points_required": "5000",
+      "base_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 200
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "reward": "gem_solvent",
+          "amount": 10
+        }
+      ],
+      "points_required": "7500",
+      "base_rewards": [
+        {
+          "reward": "gem_solvent",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "reward": "arcane_jewels",
+          "amount": 5
+        }
+      ],
+      "points_required": "11000",
+      "base_rewards": [
+        {
+          "reward": "arcane_jewels",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ],
+      "points_required": "15500",
+      "base_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "chest_type_id": 365,
+          "reward": "chest",
+          "count": 10
+        }
+      ],
+      "points_required": "21000",
+      "base_rewards": [
+        {
+          "crusader_id": 169,
+          "graphic_id": 12323,
+          "reward": "claim_crusader",
+          "starting_ep": 600
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 500
+        }
+      ],
+      "points_required": "27500",
+      "base_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 1000
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ],
+      "points_required": "35000",
+      "base_rewards": [
+        {
+          "basics_unlock": true,
+          "desc_override": "Allows you to craft Torakichi, The Greedy Tengu's Common and Uncommon gear",
+          "loot_ids": [
+            3334,
+            3335,
+            3339,
+            3340,
+            3344,
+            3345
+          ],
+          "reward": "crafting_recipe",
+          "rarity": 2,
+          "graphic_id": 12363,
+          "name_override": "Torakichi's Common and Uncommon Recipes"
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "reward": "dungeon_vouchers",
+          "amount": 10
+        }
+      ],
+      "points_required": "43500",
+      "base_rewards": [
+        {
+          "reward": "dungeon_vouchers",
+          "amount": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "chest_type_id": 476,
+          "reward": "chest",
+          "count": 5
+        }
+      ],
+      "points_required": "53000",
+      "base_rewards": [
+        {
+          "chest_type_id": 476,
+          "reward": "chest",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "reward": "arcane_jewels",
+          "amount": 5
+        }
+      ],
+      "points_required": "63500",
+      "base_rewards": [
+        {
+          "reward": "arcane_jewels",
+          "amount": 5
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ],
+      "points_required": "75000",
+      "base_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "chest_type_id": 476,
+          "reward": "chest",
+          "count": 5
+        }
+      ],
+      "points_required": "87500",
+      "base_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 2000
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "graphic_id": 1386,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ],
+      "points_required": "101000",
+      "base_rewards": [
+        {
+          "graphic_id": 2375,
+          "reward": "season_buff",
+          "effect": {
+            "effect_string": "increase_monster_spawn_time_mult,150"
+          }
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 15000
+        }
+      ],
+      "points_required": "115500",
+      "base_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 10000
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "reward": "hero_skin",
+          "hero_skin_id": 63
+        }
+      ],
+      "points_required": "131000",
+      "base_rewards": [
+        {
+          "level": 4,
+          "id": 3,
+          "reward": "gems",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 6,
+          "id": 2,
+          "reward": "gems",
+          "count": 10
+        }
+      ],
+      "points_required": "147500",
+      "base_rewards": [
+        {
+          "level": 4,
+          "id": 2,
+          "reward": "gems",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 6,
+          "id": 3,
+          "reward": "gems",
+          "count": 10
+        }
+      ],
+      "points_required": "165000",
+      "base_rewards": [
+        {
+          "level": 4,
+          "id": 4,
+          "reward": "gems",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 6,
+          "id": 4,
+          "reward": "gems",
+          "count": 10
+        }
+      ],
+      "points_required": "185000",
+      "base_rewards": [
+        {
+          "reward": "hero_skin",
+          "hero_skin_id": 64
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "loot_id": 3355,
+          "reward": "loot"
+        }
+      ],
+      "points_required": "210000",
+      "base_rewards": [
+        {
+          "level": 5,
+          "id": 1,
+          "reward": "gems",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 7,
+          "id": 5,
+          "reward": "gems",
+          "count": 10
+        }
+      ],
+      "points_required": "240000",
+      "base_rewards": [
+        {
+          "level": 5,
+          "id": 5,
+          "reward": "gems",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "chest_type_id": 365,
+          "reward": "chest",
+          "count": 10
+        }
+      ],
+      "points_required": "275000",
+      "base_rewards": [
+        {
+          "chest_type_id": 365,
+          "reward": "chest",
+          "count": 10
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "amount": 750000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ],
+      "points_required": "312500",
+      "base_rewards": [
+        {
+          "amount": 500000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 7,
+          "id": 2,
+          "reward": "gems",
+          "count": 10
+        }
+      ],
+      "points_required": "352500",
+      "base_rewards": [
+        {
+          "level": 6,
+          "id": 4,
+          "reward": "gems",
+          "count": 5
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 7,
+          "id": 3,
+          "reward": "gems",
+          "count": 10
+        }
+      ],
+      "points_required": "392500",
+      "base_rewards": [
+        {
+          "amount": 40000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 7,
+          "id": 4,
+          "reward": "gems",
+          "count": 10
+        }
+      ],
+      "points_required": "432500",
+      "base_rewards": [
+        {
+          "amount": 40000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 7,
+          "id": 1,
+          "reward": "gems",
+          "count": 10
+        }
+      ],
+      "points_required": "472500",
+      "base_rewards": [
+        {
+          "amount": 40000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [
+        {
+          "level": 8,
+          "id": 5,
+          "reward": "gems",
+          "count": 6
+        }
+      ],
+      "points_required": "512500",
+      "base_rewards": [
+        {
+          "amount": 40000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "552500",
+      "base_rewards": [
+        {
+          "amount": 40000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "592500",
+      "base_rewards": [
+        {
+          "amount": 40000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "632500",
+      "base_rewards": [
+        {
+          "amount": 40000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "682500",
+      "base_rewards": [
+        {
+          "amount": 100000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "732500",
+      "base_rewards": [
+        {
+          "amount": 100000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "782500",
+      "base_rewards": [
+        {
+          "amount": 100000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "832500",
+      "base_rewards": [
+        {
+          "amount": 100000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "882500",
+      "base_rewards": [
+        {
+          "amount": 100000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "932500",
+      "base_rewards": [
+        {
+          "amount": 100000,
+          "reward": "crafting_materials",
+          "crafting_material_id": 1
+        }
+      ]
+    },
+    {
+      "bonus_rewards": [],
+      "points_required": "982500",
+      "base_rewards": [
+        {
+          "level": 6,
+          "id": 1,
+          "reward": "gems",
+          "count": 10
+        }
+      ]
+    }
+  ]
+}
