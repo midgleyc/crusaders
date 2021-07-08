@@ -102,6 +102,9 @@ def make_subpage(fulljs, loot):
       elif effect[0] == 'buff_formation_ability_chance_mult':
         item_to_add.effect = f'Increases the chance that Hex to Know You will activate by {effect[1]}%'
         item_to_add.extra_bar = '|'
+      elif effect[0] == 'damage_random_enemy_add_shots':
+        item_to_add.effect = f'Adds {effect[1]} additional target{"" if effect[1] == "1" else "s"} to Qadir\'s Psychic Spike ability'
+        item_to_add.extra_bar = '|'
       else:
         raise AttributeError("Cannot parse effect " + ','.join(effect))
       if item_to_add.is_leg():
