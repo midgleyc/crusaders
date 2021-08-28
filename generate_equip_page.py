@@ -32,13 +32,15 @@ def lookup_effect_by_key(j, effect_key):
 def effect_string_to_effect(j, effect_string, extra_fields={}):
   effect_name, *param_values = effect_string.split(',')
   if effect_name == 'global_dps_per_target':
-    return f'Increases the DPS of all Crusaders by {extra_fields["level_amount"]}% for each Alien Crusader, stacking additively'
+    return f'Increases the DPS of all Crusaders by {extra_fields["level_amount"]}% for each Crusader, stacking multiplicatively'
   if effect_name == 'buff_fa_max_stacks':
     return f'Increases the max stacks of Ring Leader by {param_values[-2]}'
   if effect_name == 'buff_formation_ability_indices':
     return f'Increases the DPS effect of Crawly Friends by {param_values[0]}%'
   if effect_name == 'reduce_fa_cooldown':
     return f'Decreases the cooldown of Nuts! by {param_values[0]} seconds'
+  if effect_name == 'formation_ability_level_reduce':
+    return f'Reduces the number of levels required for Bite, Shark Bite by {param_values[0]}'
   else:
     effect = lookup_effect_by_key(j, effect_name)
   params = extra_fields
