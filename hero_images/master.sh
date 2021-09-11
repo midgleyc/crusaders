@@ -19,7 +19,7 @@ fi
 echo 'Getting swf'
 url=$(< $FULLJS jq -r '.graphic_defines | map(select(.id == '"$graphic_id"')) | .[0] | "http://idlemaster.djartsgames.ca/~idle/swf/Graphics/\(.graphic).swf"')
 
-wget $url -O "$*.swf"
+wget "$url" -O "$*.swf"
 echo 'Making icon'
 ./make_icon.sh "$*.swf"
 echo "Moving to $OUTPUT_BASE_DIR_HERO/$*/"
