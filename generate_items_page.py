@@ -108,6 +108,9 @@ def make_subpage(fulljs, loot):
       elif effect[0] == 'formation_ability_level_reduce':
         item_to_add.effect = f'Reduces the number of levels required for Bite, Shark Bite by {effect[1]}'
         item_to_add.extra_bar = '|'
+      elif effect[0] == 'reduce_fa_cooldown':
+        item_to_add.effect = f'Decreases the cooldown of Pollinate by {effect[1]} seconds'
+        item_to_add.extra_bar = '|'
       else:
         raise AttributeError("Cannot parse effect " + ','.join(effect))
       if item_to_add.is_leg():
