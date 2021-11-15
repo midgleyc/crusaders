@@ -111,6 +111,9 @@ def make_subpage(fulljs, loot):
       elif effect[0] == 'reduce_fa_cooldown':
         item_to_add.effect = f'Decreases the cooldown of Pollinate by {effect[1]} seconds'
         item_to_add.extra_bar = '|'
+      elif effect[0] == 'add_global_dps_increase_to_ability':
+        item_to_add.effect = f'Savage Strike now also increases Global DPS by {effect[1]}% while active'
+        item_to_add.extra_bar = '|'
       else:
         raise AttributeError("Cannot parse effect " + ','.join(effect))
       if item_to_add.is_leg():
