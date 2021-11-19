@@ -1,0 +1,2139 @@
+{
+  "id": "5",
+  "name": "The Crypt",
+  "description": "And again!",
+  "start_date": 1632949200,
+  "end_date": 1642618800,
+  "details": {
+    "graphics": {
+      "top_left": 11452,
+      "bottom_right": 11451,
+      "icon": 1804
+    },
+    "play_requirements": [
+      {
+        "condition": "objective_complete",
+        "objective": 595
+      }
+    ],
+    "rotating_bonuses": [
+      {
+        "type": "bonus_coins",
+        "amount": 300
+      },
+      {
+        "type": "bonus_progress",
+        "amount": 300
+      },
+      {
+        "type": "percent_idols",
+        "amount": {
+          "type": "piecewise",
+          "step": 500,
+          "pieces": [
+            {
+              "from": 500,
+              "to": 20000,
+              "from_amount": 0.1,
+              "to_amount": 4
+            }
+          ],
+          "difficulty_mult": [
+            {
+              "1": [
+                {
+                  "pieces": [
+                    {
+                      "from": 500,
+                      "to": 20000,
+                      "from_amount": 1,
+                      "to_amount": 1
+                    }
+                  ]
+                }
+              ],
+              "2": [
+                {
+                  "pieces": [
+                    {
+                      "from": 500,
+                      "to": 20000,
+                      "from_amount": 1.2,
+                      "to_amount": 1.2
+                    }
+                  ],
+                  "max": 4.2
+                }
+              ],
+              "3": [
+                {
+                  "pieces": [
+                    {
+                      "from": 500,
+                      "to": 20000,
+                      "from_amount": 1.125,
+                      "to_amount": 1.125
+                    }
+                  ],
+                  "max": 4.32
+                }
+              ],
+              "4": [
+                {
+                  "pieces": [
+                    {
+                      "from": 500,
+                      "to": 20000,
+                      "from_amount": 1.333,
+                      "to_amount": 1.333
+                    }
+                  ],
+                  "max": 4.5
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "featured_item_level": 18,
+    "collapse_rewards": 41
+  },
+  "levels": [
+    {
+      "points_required": "0",
+      "base_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 1386,
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,5"
+          }
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 11511,
+          "effect": {
+            "effect_string": "dungeon_progress_mult,25"
+          }
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1500",
+      "base_rewards": [
+        {
+          "reward": "epic_recipe_tokens",
+          "amount": 5
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 1386,
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,5"
+          }
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "4500",
+      "base_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 2375,
+          "effect": {
+            "effect_string": "increase_monster_spawn_time_mult,800"
+          }
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 1386,
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,15"
+          }
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "9000",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "15000",
+      "base_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 200
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 200
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "22500",
+      "base_rewards": [
+        {
+          "reward": "gem_solvent",
+          "amount": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gem_solvent",
+          "amount": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "31500",
+      "base_rewards": [
+        {
+          "reward": "arcane_jewels",
+          "amount": 5
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "arcane_jewels",
+          "amount": 5
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "42000",
+      "base_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 1386,
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 1386,
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,15"
+          }
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "54000",
+      "base_rewards": [
+        {
+          "reward": "claim_crusader",
+          "crusader_id": 176,
+          "graphic_id": 12652,
+          "starting_ep": 600
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "67500",
+      "base_rewards": [
+        {
+          "reward": "dungeon_vouchers",
+          "amount": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 1386,
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,15"
+          }
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "82500",
+      "base_rewards": [
+        {
+          "reward": "crafting_recipe",
+          "basics_unlock": true,
+          "loot_ids": [
+            3487,
+            3488,
+            3492,
+            3493,
+            3497,
+            3498
+          ],
+          "rarity": 2,
+          "name_override": "Matt Spacewalker's Common and Uncommon Recipes",
+          "desc_override": "Allows you to craft Matt Spacewalker's Common and Uncommon gear",
+          "graphic_id": 12363
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 2000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "99000",
+      "base_rewards": [
+        {
+          "reward": "season_buff",
+          "graphic_id": 1386,
+          "effect": {
+            "effect_string": "bonus_idols_earned_from_reset,10"
+          }
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 3,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "117000",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 503,
+          "count": 5
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 503,
+          "count": 5
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "136500",
+      "base_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 3000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 2000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "157500",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 4,
+          "level": 3,
+          "count": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 4,
+          "level": 4,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "180000",
+      "base_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 1000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 1000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "204000",
+      "base_rewards": [
+        {
+          "reward": "gem_solvent",
+          "amount": 5
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 4,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "229500",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 3,
+          "count": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 4,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "256500",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 3,
+          "level": 4,
+          "count": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "taskmaster",
+          "taskmaster_id": 21
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "285000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 4,
+          "count": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 6,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "315000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 4,
+          "level": 4,
+          "count": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 3,
+          "level": 6,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "347000",
+      "base_rewards": [
+        {
+          "reward": "taskmaster",
+          "taskmaster_id": 20
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 4,
+          "level": 6,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "381000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 5,
+          "count": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "loot",
+          "loot_id": 3502
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "417000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 5,
+          "count": 10
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 7,
+          "count": 10
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "455000",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 15
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 20
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "495000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 500000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 750000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "535000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 4,
+          "level": 5,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 4,
+          "level": 5,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "575000",
+      "base_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 3000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "red_rubies",
+          "amount": 2000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "615000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 5,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 5,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "655000",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "695000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 5,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 5,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "735000",
+      "base_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 600
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "challenge_tokens",
+          "amount": 400
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "775000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 3,
+          "level": 5,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 3,
+          "level": 5,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "815000",
+      "base_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 300
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "dungeon_coins",
+          "amount": 200
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "855000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 5,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 5,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "895000",
+      "base_rewards": [
+        {
+          "reward": "gem_solvent",
+          "amount": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gem_solvent",
+          "amount": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "935000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 3,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 3,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "975000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 4,
+          "amount": 1000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 4,
+          "amount": 400
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1015000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1055000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 5,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 5,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1095000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "show_as": "40A"
+      }
+    },
+    {
+      "points_required": "1135000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": {
+        "show_as": "41A"
+      }
+    },
+    {
+      "points_required": "1175000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": {
+        "show_as": "42A"
+      }
+    },
+    {
+      "points_required": "1215000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": {
+        "show_as": "43A"
+      }
+    },
+    {
+      "points_required": "1255000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": {
+        "show_as": "44A"
+      }
+    },
+    {
+      "points_required": "1295000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": {
+        "show_as": "45A"
+      }
+    },
+    {
+      "points_required": "1335000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1375000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1415000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1455000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1505000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "show_as": "50A"
+      }
+    },
+    {
+      "points_required": "1555000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1605000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1655000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1705000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1755000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1805000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1855000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1905000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1955000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 24000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 16000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2005000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2055000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2105000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2155000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2205000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2255000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2305000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2355000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2405000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2455000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2505000",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 4
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 6
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2555000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2605000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2655000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2705000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2765000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 20000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2825000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2885000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "2945000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3005000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3065000",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 4
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 6
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3125000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3185000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3245000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3305000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3365000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3425000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3485000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3545000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3605000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3665000",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 4
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 6
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3725000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3785000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3845000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3905000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "3965000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "4025000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "4085000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "4145000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "4205000",
+      "base_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 45000
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "crafting_materials",
+          "crafting_material_id": 1,
+          "amount": 30000
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "4265000",
+      "base_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 4
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "chest",
+          "chest_type_id": 365,
+          "count": 6
+        }
+      ],
+      "properties": []
+    },
+    {
+      "points_required": "1095000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "sort_as": 40.1,
+        "show_as": "40B"
+      }
+    },
+    {
+      "points_required": "1135000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 2,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "sort_as": 41.1,
+        "show_as": "41B"
+      }
+    },
+    {
+      "points_required": "1175000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 4,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 4,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "sort_as": 42.1,
+        "show_as": "42B"
+      }
+    },
+    {
+      "points_required": "1215000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 7,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 7,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "sort_as": 43.1,
+        "show_as": "43B"
+      }
+    },
+    {
+      "points_required": "1255000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 3,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 3,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "sort_as": 44.1,
+        "show_as": "44B"
+      }
+    },
+    {
+      "points_required": "1295000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 6,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 5,
+          "level": 6,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "sort_as": 45.1,
+        "show_as": "45B"
+      }
+    },
+    {
+      "points_required": "1505000",
+      "base_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 7,
+          "count": 6
+        }
+      ],
+      "bonus_rewards": [
+        {
+          "reward": "gems",
+          "id": 1,
+          "level": 7,
+          "count": 4
+        }
+      ],
+      "properties": {
+        "sort_as": 50.1,
+        "show_as": "50B"
+      }
+    }
+  ]
+}
