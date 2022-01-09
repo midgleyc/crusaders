@@ -91,8 +91,9 @@ def make_subpage(fulljs, loot):
         item_to_add.effect = f'Increases monster spawn speed by {effect[1]}%'
         item_to_add.extra_bar = '|'
       elif effect[0] == 'global_dps_multiplier_mult':
-        item_to_add.effect = f'DPSall'
-        item_to_add.extra_bar = '|'
+        # maybe check on crusader being tier 7+?
+        item_to_add.effect = f'DPSall|{effect[1]}'
+        # item_to_add.extra_bar = f'|'
       elif effect[0] == 'hero_dps_multiplier_mult':
         hero = lookup_hero_by_id(fulljs, item['hero_id'])
         item_to_add.effect = f'DPS|{hero["name"]}'
@@ -113,6 +114,12 @@ def make_subpage(fulljs, loot):
         item_to_add.extra_bar = '|'
       elif effect[0] == 'add_global_dps_increase_to_ability':
         item_to_add.effect = f'Savage Strike now also increases Global DPS by {effect[1]}% while active'
+        item_to_add.extra_bar = '|'
+      elif effect[0] == 'ability_cooldown_reduction_mult':
+        item_to_add.effect = f'Reduce the cooldown of Flurry of Feathers by {effect[1]}% (Can reduce past cooldown cap)'
+        item_to_add.extra_bar = '|'
+      elif effect[0] == 'buff_ability':
+        item_to_add.effect = f'Increases the effect of Flurry of Feathers by {effect[1]}%'
         item_to_add.extra_bar = '|'
       else:
         raise AttributeError("Cannot parse effect " + ','.join(effect))
