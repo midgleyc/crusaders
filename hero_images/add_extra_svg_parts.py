@@ -3,8 +3,8 @@
 import sys
 import re
 
-x=-30 # lower is righter
-y=-30
+x=-32 # lower is righter
+y=-22
 
 def correct_viewbox(s):
   for index, line in enumerate(s):
