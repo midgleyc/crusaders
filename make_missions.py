@@ -4,13 +4,23 @@ import json
 import re
 import sys
 
+def make_title(tag):
+  if tag == 'dps': return 'DPS'
+  return tag.title()
+
 def make_tags(tags):
   tags = Counter(tags)
   for race, count in tags.items():
-    print(str(count) + ' {{MissionTag|' + race + '}} ' + race.title() + '<br/>')
+    print(str(count) + ' {{MissionTag|' + race + '}} ' + make_title(race) + '<br/>')
+
+def make_tags_table(tags):
+  for race in tags:
+    print('{{MissionTag|' + race + '}}', end='')
 
 def print_mission_summary(j, loot):
-  print(loot)
+  print(make_tags(loot['required_tags']))
+  print('--')
+  print(make_tags_table(loot['required_tags']))
 
 def main(requested_ids):
   requested_ids = list(map(int, requested_ids))
